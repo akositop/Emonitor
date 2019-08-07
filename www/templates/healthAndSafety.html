@@ -1,0 +1,77 @@
+<ion-view title="Health and Safety" id="page2" style="background-color:#FFFCFC;" >
+  <!-- <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-icon button-clear icon ion-android-clipboard"></button>
+  </ion-nav-buttons> -->
+  <ion-content padding="true" class="has-header">
+    
+    <div class="row">
+      <div class="col col-50"><b>Date: {{date | date:'yyyy-MM-dd'}}</b></div>
+      <div class="col"></div>
+      <div class="col"><b>Week No.: {{date | date:'w'}}</b></div>
+    </div>
+
+    <ion-item class="item-divider">Evidence</ion-item>
+    <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;" >
+       <img ng-src="{{pathForImage(image)}}" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;">
+    </div>
+
+    <button id="healthAndSafety-button10" class="button button-dark button-flat button-block icon ion-camera" ng-click="loadImage()"></button>
+    
+    <!-- <div id="healthAndSafety-button-bar1" class="button-bar">
+    
+
+        <button id="healthAndSafety-button11" class="button button-assertive button-flat button-block icon ion-close-round">
+         Clear
+        </button>
+
+    </div> -->
+
+    <ion-item class="item-divider">Report Forms</ion-item>
+    <form name="myForm" class="list">
+      <ion-list id="healthAndSafety-list4">
+
+        <label class="item item-select" id="healthAndSafety-select9">
+          <span class="input-label">Parameters to Inspect</span>
+          <select name="repeatSelect" ng-model="hands.PTI_id" required>
+              <option ng-repeat="x in PTIS" value="{{x.PTI_id}}">{{x.PTI_desc}}</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label" >Requirement of</span>
+          <input type="text" placeholder="Enter Requirement of..." ng-model="hands.hands_req_of" required>
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Time Frame</span>
+          <input type="text" placeholder="Enter Time Frame... " ng-model="hands.hands_time_frame" required>
+        </label>
+
+       <label class="item item-input item-stacked-label">
+          <span class="input-label">Findings Description</span>
+          <textarea placeholder="Enter Findings Description" ng-model="hands.hands_findings" required></textarea>
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Action Plan</span>
+          <textarea placeholder="Enter Action Plan" ng-model="hands.hands_action_plan" required></textarea>
+        </label>
+
+        <label class="item item-select">
+          <span class="input-label">Status of the Findings</span>
+          <select name="repeatSelect" ng-model="hands.stat_id" required>
+              <option ng-repeat="x in statuss" value="{{x.stat_id}}">{{x.stat_desc}}</option>
+          </select>
+        </label>
+
+
+
+     
+
+      </ion-list>
+      <button id="healthAndSafety-button6" class="button button-balanced button-flat ink button-block icon ion-android-send" data-ink-color="#84ffbf" data-ink-opacity=".6" ng-click="saveHands(hands)" ng-disabled="myForm.$invalid"> Submit</button>
+    </form>
+   
+  </ion-content>
+   
+</ion-view>

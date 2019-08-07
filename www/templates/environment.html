@@ -1,0 +1,69 @@
+<ion-view title="Environment" id="page5">
+ <!--  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-clear button-icon icon ion-android-globe"></button>
+  </ion-nav-buttons> -->
+  <ion-content padding="true" class="has-header">
+
+    <div class="row">
+      <div class="col col-50"><b>Date: {{date | date:'yyyy-MM-dd'}}</b></div>
+      <div class="col"></div>
+      <div class="col"><b>Week No.: {{date | date:'w'}}</b></div>
+    </div>
+
+    <ion-item class="item-divider">Evidence</ion-item>
+    
+    <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;" >
+       <img ng-src="{{pathForImage(image)}}" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;">
+    </div>
+    <!-- <div style="margin: 0px; line-height: 250px; background-color: rgb(232, 235, 239); text-align: center;">
+      <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
+    </div> -->
+    
+    <button id="environment-button13" class="button button-dark button-flat button-block icon ion-camera" ng-click="loadImage()"></button>
+    <!-- 
+    <div id="environment-button-bar2" class="button-bar">
+
+      
+      <button id="environment-button14" class="button button-assertive button-flat button-block icon ion-close-round">
+       Clear
+      </button>
+
+    </div> -->
+
+    <form name="myForm">
+      <ion-list id="environment-list2">
+        <ion-item class="item-divider">Report Forms</ion-item>
+
+       <!--  <label class="item item-select" id="environment-select6">
+          <span class="input-label">Farm</span>
+          <select name="repeatSelect" ng-model="envi.farms_id">
+              <option ng-repeat="x in farms" value="{{x.farms_id}}">{{x.farms_desc}}</option>
+          </select>
+        </label> -->
+
+        <label class="item item-select">
+          <span class="input-label">Location</span>
+          <select name="repeatSelect" ng-model="envi.location_id" required>
+              <option ng-repeat="x in locations" value="{{x.location_id}}">{{x.location_desc}}</option>
+          </select>
+        </label>
+
+        <label class="item item-select">
+          <span class="input-label">Operation</span>
+          <select name="repeatSelect" ng-model="envi.operations_id" required>
+              <option ng-repeat="x in operations" value="{{x.operations_id}}">{{x.operations_desc}}</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Findings</span>
+          <textarea id="txtnotes" placeholder= "Enter Findings Description..." ng-model="envi.envi_findings" required></textarea>
+
+        </label>
+        
+      </ion-list>
+       <button id="environment-button5" class="button button-balanced button-flat ink button-block icon ion-android-send" data-ink-color="#84ffbf" data-ink-opacity=".6" ng-click="saveEnvi(envi)" ng-disabled="myForm.$invalid"> Submit</button>
+    </form>
+      
+  </ion-content>
+</ion-view>

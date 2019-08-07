@@ -1,0 +1,24 @@
+ <ion-view view-title="Top 5 of Frequent Report">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content>
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Top 5 Frequent Report</h3>
+                    </div>
+                  <div class="item item-text-wrap">
+                      <nvd3 options="pieChrt.options" data="pieChrt.data" ></nvd3> <!-- Pie Chart -->
+              
+                    </div>
+                 </div>
+
+               
+
+
+
+                
+       </ion-content>
+      </ion-view>

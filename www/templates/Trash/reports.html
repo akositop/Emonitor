@@ -1,0 +1,43 @@
+<ion-view title="Reports" id="page15">
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-clear button-icon icon ion-stats-bars"></button>
+  </ion-nav-buttons>
+ 
+  <ion-content padding="true" class="has-header">
+  			<ion-refresher icon="spiral" on-refresh="doRefresh()">
+            </ion-refresher>
+            
+		    <div class="button-bar">
+			  <a class="button button-light" ng-class="{ 'button\-positive': status == 'Environment' }" ng-click="setReportStatus('Environment')">Environment</a>
+			  <a class="button button-light" ng-class="{ 'button\-positive': status == 'Health and Safety' }" ng-click="setReportStatus('Health and Safety')">Health and Safety</a>
+		    </div>
+			 <ion-list>
+			          <a class="item" ng-repeat="x in reports" href="#/menu/rate/id={{x.envi_id}}">
+				          <div class="list card">
+				           	  <h3 class="bold">Form No: {{x.envi_id}}</h3>
+				              <div class="item item-avatar stable-bg">
+				              		<img src="img/jd.jpg">
+								   	 Submitted By:<h3 class="bold"> {{x.user_fname}}  {{x.user_lname}} - {{x.farms_desc}}</h3>
+								   	 Date:<h4 class="bold"> {{x.envi_subdate}}</h4>
+								   	 Week No: <h4 class="bold">{{x.envi_weekno}}</h4>
+								   	 <span class="label label-success" ng-if="x.envi_rate == 'Yes'">Done Rated</span>	
+								     <span class="label label-danger" ng-if="x.envi_rate == 'No'">Not yet rate</span>
+				          	  </div>
+						      <img class="full-image" src="img/1.jpg">
+			              	  <div class="item item-body stable-bg">
+							     <b>Findings:</b>
+							     <p>
+							      {{x.envi_findings}}
+							     </p>
+
+							     <hr>
+						         <p>
+						          <h4 class="hey"><i class="icon ion-star"></i>
+						          Tap to Rate This! </h4> 
+							     </p>
+						     </div>
+			              </div>
+			          </a>
+			 </ion-list>
+  </ion-content>
+</ion-view>

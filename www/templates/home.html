@@ -1,0 +1,111 @@
+ <ion-view view-title="Home">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content>
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Dashboard</h3>
+                    </div>
+          <div class="item item-text-wrap">
+                    Environment
+                    <hr>
+                      <b>Top 5 Frequent Report</b>
+                      <nvd3 options="pieChrt.options" data="pieChrt.data" ></nvd3> <!-- Pie Chart -->
+                      
+                      <b>Frequency of Operation</b>
+                      <nvd3 options="horizontal.options" data="horizontal.data" ></nvd3> <!-- Horizantal Chart -->
+
+                      <b>Farms Ranking</b>
+                      <nvd3 options="line.options" data="line.data" ></nvd3> <!-- Line -->
+                      <hr> 
+                      Health and Safety<br><br><br>
+                      <b>Compliance of Findings</b>
+                      <nvd3 options="stacked.options" data="stacked.data" ></nvd3> <!-- Stacked Chart -->
+                      <b>Frequent Parameters to Inspect</b>
+                      <br>
+                      Overall
+                      <hr>
+                      <nvd3 options="donut.options" data="donut.data" ></nvd3> <!-- donuts Chart -->
+                      <br>
+                      Top 3
+                      <hr>
+                      <nvd3 options="barChart.options" data="barChart.data" ></nvd3> <!-- Bar Chart -->
+                      <br>
+
+                      <!-- Predictive Analysis Using Decision Tree -->
+
+                      <ion-item class="item-divider">Number of Closed and Ongoing Cases</ion-item>
+                          <div class="row header">
+                              <div class="col bold">Farm</div>
+                              <div class="col bold">On-Going</div>
+                              <div class="col bold">Closed</div>
+                          </div>
+                          <div class="row" ng-repeat="x in comp">
+
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.OnGoing}}</div>
+                              <div class="col">{{x.Closed}}</div>
+                          </div>
+
+                       <ion-item class="item-divider">Comparison of Complied Cases</ion-item>
+                          <div class="row header">
+                              <div class="col bold">Farm</div>
+                              <div class="col bold">This Week</div>
+                              <div class="col bold">Last Week</div>
+                          </div>
+                          <div class="row" ng-repeat="x in ranksW">
+
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.score}}</div>
+                          </div>     
+
+
+                        <ion-item class="item-divider">Overall Percentage(Yearly)</ion-item>
+                          <nvd3 options="pieChart.options" data="pieChart.data" ></nvd3> <!-- Pie Chart -->
+
+
+                        <ion-item class="item-divider">Weekly Percentage</ion-item>
+                          <nvd3 options="pieChart.options" data="pieChart.data" ></nvd3> <!-- Pie Chart -->
+
+                    </div>
+                 </div>
+
+                <!-- Rankings of Farms -->
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Rank of Farms (Enviroment)</h3>
+                    </div>
+                  <ion-item class="item-divider">This Week Ranking</ion-item>
+                          <div class="row header">
+                              <div class="col bold">Rank</div>
+                              <div class="col bold">Farm</div>
+                              <div class="col bold">Score</div>
+                          </div>
+                          <div class="row" ng-repeat="x in ranksW">
+
+                              <div class="col">{{$index + 1}}</div>
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.score}}</div>
+                          </div>
+                  <ion-item class="item-divider">Overall Rank (Year)</ion-item>
+                         <div class="row header">
+                              <div class="col bold">Rank</div>
+                              <div class="col bold">Farm</div>
+                              <div class="col bold">Score</div>
+                          </div>
+                          <div class="row" ng-repeat="x in ranks"">
+                              <div class="col">{{$index + 1}}</div>
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.score}}</div>
+                          </div>
+                </div>
+
+
+
+                
+       </ion-content>
+      </ion-view>

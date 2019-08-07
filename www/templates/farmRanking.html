@@ -1,0 +1,43 @@
+ <ion-view view-title="Rank of Farms (Enviroment)">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content>
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Rank of Farms (Enviroment)</h3>
+                    </div>
+          <div class="item item-text-wrap">
+                   
+                  <ion-item class="item-divider">This Week Ranking</ion-item>
+                          <div class="row header">
+                              <div class="col bold">Rank</div>
+                              <div class="col bold">Farm</div>
+                              <div class="col bold">Score</div>
+                          </div>
+                          <div class="row" ng-repeat="x in ranksW">
+
+                              <div class="col">{{$index + 1}}</div>
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.score}}</div>
+                          </div>
+                  <ion-item class="item-divider">Overall Rank (Year)</ion-item>
+                         <div class="row header">
+                              <div class="col bold">Rank</div>
+                              <div class="col bold">Farm</div>
+                              <div class="col bold">Score</div>
+                          </div>
+                          <div class="row" ng-repeat="x in ranks"">
+                              <div class="col">{{$index + 1}}</div>
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.score}}</div>
+                          </div>
+                </div>
+                </div>
+
+
+                
+       </ion-content>
+      </ion-view>

@@ -1,0 +1,41 @@
+ <ion-view view-title="Monitoring Cases">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content>
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Monitoring Cases</h3>
+                    </div>
+          <div class="item item-text-wrap">
+                      <!-- Predictive Analysis Using Decision Tree -->
+
+                      <ion-item class="item-divider">Number of Closed and Ongoing Cases</ion-item>
+                          <div class="row header">
+                              <div class="col bold">Farm</div>
+                              <div class="col bold">On-Going</div>
+                              <div class="col bold">Closed</div>
+                          </div>
+                          <div class="row" ng-repeat="x in comp">
+
+                              <div class="col">{{x.farms_desc}}</div>
+                              <div class="col">{{x.OnGoing}}</div>
+                              <div class="col">{{x.Closed}}</div>
+                          </div>
+ 
+                        <ion-item class="item-divider">Performance Meter</ion-item>
+                          <nvd3 options="pieChart.options" data="pieChart.data" ></nvd3>  <!-- Pie Chart -->
+                          <nvd3 options="horizontal1.options" data="horizontal1.data" ></nvd3>
+                          
+
+                          <div id="prediction"></div>
+                    </div>
+                 </div>
+
+
+
+                
+       </ion-content>
+      </ion-view>

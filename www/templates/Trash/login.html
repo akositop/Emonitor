@@ -1,0 +1,40 @@
+<ion-view title="Login" hide-back-button="true" id="page1" hide-nav-bar="true">
+  <ion-nav-buttons side="left" class="has-header">
+    <button class="button button-icon icon ion-android-contact" ng-click="toggleLeft()"></button>
+  </ion-nav-buttons>
+  <ion-pane>
+    <ion-content scroll="false">
+    <div class="im-wrapper">
+
+ 
+          <video autoplay loop class="video" webkit-playsinline requestFullScreen>
+            <source src="video/gas.mp4" type='video/mp4; codecs="h.264"' >
+            <source src="video/gas.webm" type="video/webm">
+          </video>
+          <div >
+            <img src="img/HFThd9oiTrm8GBdqYv10_logo1.png" style="display: block; width: 70%; height: auto; margin-left: auto; margin-right: auto;">
+          </div>
+     
+     <div class="list">
+      <!--  <ion-md-input placeholder="Username"  hightlight-color="assertive" type="text" ng-model="data.username" ></ion-md-input>
+      <ion-md-input placeholder="Password"  hightlight-color="assertive" type="password" ng-model="data.password" ></ion-md-input> -->
+       <label class="item item-input item-floating-label">
+                    <span class="input-label">Username</span>
+                    <input type="text" placeholder="Username" ng-model="data.username" >
+       </label>
+       <label class="item item-input item-floating-label">
+                    <span class="input-label">Password</span>
+                    <input type="password" placeholder="Password" ng-model="data.password" >
+       </label>
+          
+     <button class="button button-block button-clear icon ion-log-in button-dark ink" data-ink-color="#323232" data-ink-opacity=".8" ng-click="login()">
+              Log In
+    </button>
+    </div>
+
+    </div>
+    
+  </ion-content>
+  </ion-pane>
+  
+</ion-view>

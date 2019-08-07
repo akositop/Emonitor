@@ -1,0 +1,24 @@
+ <ion-view view-title="Frequency of Operation">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content>
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Frequency of Operation</h3>
+                    </div>
+               <div class="item item-text-wrap">
+                      
+                      <nvd3 options="horizontal.options" data="horizontal.data" ></nvd3> <!-- Horizantal Chart -->
+
+                     
+                  </div>
+                </div>
+
+
+
+                
+       </ion-content>
+      </ion-view>

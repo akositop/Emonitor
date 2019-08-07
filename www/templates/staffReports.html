@@ -1,0 +1,40 @@
+<ion-view view-title="My Weekly Reports">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content padding="true" class="has-header">
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                
+                 <div class="list card" ng-repeat="x in staffReportss">
+                      <h3 class="bold">Form No: {{x.hands_id}}</h3>
+                      <div class="item item-avatar stable-bg">
+                          <img ng-src="https://test-server-shinaska109.c9users.io/testserver/emon/www/uploads/{{user_img}}">
+                     Submitted By:<h3 class="bold"> {{x.user_fname}}  {{x.user_lname}} - {{x.farms_desc}}</h3>
+                     Date:<h4 class="bold"> {{x.hands_date}}</h4>
+                     Week No: <h4 class="bold">{{x.hands_weekno}}</h4>
+                     Status of the Findings: <br><span class="label label-warning" ng-if="x.stat_desc == 'New Findings'">{{x.stat_desc}}</span>
+                     <span class="label label-danger" ng-if="x.stat_desc == 'On-Going'">{{x.stat_desc}}</span>
+                     <span class="label label-success" ng-if="x.stat_desc == 'Closed'">{{x.stat_desc}}</span>
+                     <hr>
+                     
+                     <span class="label label-success" ng-if="x.hands_status_validate == 'Yes'">Validated</span>  
+                     <span class="label label-default" ng-if="x.hands_status_validate == 'No'">Not yet Validate</span>
+                     
+                      </div>
+                  <img class="full-image" ng-src="https://test-server-shinaska109.c9users.io/testserver/emon/www/uploads/{{x.hands_img}}">
+                        <div class="item item-body stable-bg">
+
+                      Parameters to Inspect: <b>{{x.PTI_desc}}</b><br>
+                      Requirement of: <b>{{x.hands_req_of}}</b><br>
+                      Time Frame: <b>{{x.hands_time_frame}}</b><br>
+                      Action Plan: <b> {{x.hands_action_plan}}</b>
+                        <hr>
+                   <b>Findings Description:</b>
+                   <p class="bold">
+                    {{x.hands_findings}}
+                   </p>
+                    </div>
+
+       </ion-content>
+</ion-view>

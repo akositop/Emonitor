@@ -1,0 +1,32 @@
+ <ion-view view-title="Frequent Parameters to Inspect">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content>
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Frequent Parameters to Inspect</h3>
+                    </div>
+          <div class="item item-text-wrap">
+                      <b>Frequent Parameters to Inspect</b>
+                      <br>
+                      Overall
+                      <hr>
+                      <nvd3 options="donut.options" data="donut.data" ></nvd3> <!-- donuts Chart -->
+                      <br>
+                      <b>Top 3<b>
+                      <hr>
+                      <nvd3 options="barChart.options" data="barChart.data" ></nvd3> <!-- Bar Chart -->
+                      <br>
+
+                      
+                   </div>
+                </div>
+
+
+
+                
+       </ion-content>
+      </ion-view>

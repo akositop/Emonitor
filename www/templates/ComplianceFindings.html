@@ -1,0 +1,23 @@
+ <ion-view view-title="Compliance of Findings">
+       <!-- <ion-nav-buttons side="left" class="has-header">
+           <button class="button button-icon icon ion-navicon-round" ng-click="toggleLeft()"></button>
+      </ion-nav-buttons> -->
+        <ion-content>
+                 <ion-refresher on-refresh="doRefresh()">
+                 </ion-refresher>
+                <div class="card">
+                    <div class="item item-divider">
+                        <h3 class="bold">Compliance of Findings</h3>
+                    </div>
+                <div class="item item-text-wrap">
+
+                      <!-- <div id="chart" style="height: 500px;"><svg></svg></div> -->
+                      <nvd3 options="barChart1.options" data="barChart1.data" ></nvd3> 
+                    </div>
+                </div>
+
+
+
+                
+       </ion-content>
+      </ion-view>

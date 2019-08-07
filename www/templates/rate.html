@@ -1,0 +1,28 @@
+<ion-view title="Rating" id="page15">
+  <ion-content padding="true" class="has-header">
+  		<h3 ><i class="glyphicon glyphicon-edit"></i> Form No : {{envi._id}}</h3>
+		  <br>
+		  <form name="myForm">
+		   <h4>Findings: </h4>
+		   <label class="item item-input text">
+           	   	<textarea ng-model="envi.envi_findings" required></textarea>
+           </label>
+           <br>
+           <ion-item class="item-divider">Evaluation of Report</ion-item>
+		        <label class="item item-select">
+		        	<span class="input-label">Operation</span>
+			        <select name="repeatSelect" ng-model="envi.ecrit_id" required>
+					     <option ng-repeat="x in criterias" name="ecrit" value="{{x.ecrit_id}}">{{x.ecrit_desc}}</option>
+					 </select>
+		        </label>
+
+		        <label class="item item-input" id="register-input6">
+	               <span class="input-label">Score:</span>
+		           <!-- <input type="number" name="score" placeholder="Enter Score" ng-model="user.user_fname" required>
+					 -->
+					<input type="number" limit-to="1" ng-model="envi.envi_score" name="score" ng-pattern="/^[0-9]{1,7}$/" required> 		
+ 		        </label>
+		   <button id="environment-button5" class="button button-balanced button-flat ink button-block icon ion-thumbsup" data-ink-color="#84ffbf" data-ink-opacity=".6" ng-click="saveEnvi(envi)" ng-disabled="myForm.$invalid"> Rate and Update </button>
+  		</form>
+  </ion-content>
+</ion-view>
